@@ -69,14 +69,17 @@ element *numSwapsSelectionSort(int *arr, int size)
                 min_idx = j;
             }
         }
-        element temp = swaps[i];
+        if (i != min_idx)
+        {
+            element temp = swaps[i];
 
-        swaps[i] = swaps[min_idx];
+            swaps[i] = swaps[min_idx];
 
-        swaps[min_idx] = temp;
+            swaps[min_idx] = temp;
 
-        swaps[i].numswaps++;
-        swaps[min_idx].numswaps++;
+            swaps[i].numswaps++;
+            swaps[min_idx].numswaps++;
+        }
     }
     return swaps;
 }
